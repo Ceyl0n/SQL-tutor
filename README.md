@@ -5,7 +5,7 @@
 
 ### Создание базы данных
 
-После создания БД ее надо выбрать командой "use имя_базы_данных;" для дальнейшей работы с ней
+После создания БД ее надо выбрать командой `use имя_базы_данных;` для дальнейшей работы с ней
 
 ```sql
 create database forum;
@@ -69,17 +69,17 @@ SELECT * FROM topics WHERE id_author=4;
 ```
 
 **Ключевое слово `WHERE` имеет следующие условия:**
-- = (равно) id_author=4
-- > / < (больше / меньше) id_author>2
-- >= / <=  (больше или равно / меньше или равно) id_author>=2
-- != (не равно) id_author!=1
-- IS NOT NULL (поле не пустое) id_author IS NOT NULL
-- IS NULL (пустое поле) id_author IS NULL
-- BETWEEN (значения между указанными) id_author BETWEEN 1 AND 3
-- IN (соответствуют указаным) id_author IN (1, 4)
-- NOT IN (кроме указаных) id_author NOT IN (1, 4)
-- LIKE (соответствие образцу) topic_name LIKE 'вел%' (% - любое кол-во символов, _ - 1 символ)
-- NOT LIKE (не соответствие образцу) topic_name NOT LIKE 'вел%';
+- `=` (равно) id_author=4
+- `>` / `<` (больше / меньше) id_author>2
+- `>=` / `<=`  (больше или равно / меньше или равно) id_author>=2
+- `!=` (не равно) id_author!=1
+- `IS NOT NULL` (поле не пустое) id_author IS NOT NULL
+- `IS NULL` (пустое поле) id_author IS NULL
+- `BETWEEN` (значения между указанными) id_author BETWEEN 1 AND 3
+- `IN` (соответствуют указаным) id_author IN (1, 4)
+- `NOT IN` (кроме указаных) id_author NOT IN (1, 4)
+- `LIKE` (соответствие образцу) topic_name LIKE 'вел%' (% - любое кол-во символов, _ - 1 символ)
+- `NOT LIKE` (не соответствие образцу) topic_name NOT LIKE 'вел%';
 
 
 ### Вложенные запросы
