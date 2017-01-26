@@ -34,4 +34,3 @@ create table posts (
   FOREIGN KEY(id_author) REFERENCES users(id_user),
   FOREIGN KEY(id_topic) REFERENCES topics(id_topic)
 );
-
