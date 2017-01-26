@@ -78,12 +78,19 @@ SELECT * FROM topics WHERE id_author=4;
 - `BETWEEN` (значения между указанными) id_author BETWEEN 1 AND 3
 - `IN` (соответствуют указаным) id_author IN (1, 4)
 - `NOT IN` (кроме указаных) id_author NOT IN (1, 4)
-- `LIKE` (соответствие образцу) topic_name LIKE 'вел%' (% - любое кол-во символов, _ - 1 символ)
+- `LIKE` (соответствие образцу) topic_name LIKE '_ рыб%' (% - любое кол-во символов, _ - 1 символ)
 - `NOT LIKE` (не соответствие образцу) topic_name NOT LIKE 'вел%';
 
 
 ### Вложенные запросы
 
-```sql
+Подзапросы могут выбирать только один столбец, значение которого они будут возвращать внешнему запросу
 
+```sql
+SELECT message FROM posts WHERE id_author IN
+  (SELECT id_author FROM topics WHERE topic_name='велосипеды');
+
+SELECT topic_name FROM topics WHERE id_topic IN
+  (SELECT id_topic FROM posts WHERE id_author IN
+  (SELECT id_author FROM topics WHERE topic_name='велосипеды'));
 ```
