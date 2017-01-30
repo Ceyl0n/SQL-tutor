@@ -140,5 +140,8 @@ ON users.id_user=topics.id_author;
 -- кол-во пользователей в таблице
 SELECT count(id_user) FROM users;
 
-
+SELECT id_topic, count(id_topic)
+FROM posts
+GROUP BY id_topic
+HAVING count(id_topic)>2;
 ```
