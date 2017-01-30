@@ -1,10 +1,10 @@
 /*
-  Простое объединение двух таблиц с условием
+  Внутреннее объединение двух таблиц с условием
 */
 SELECT topics.topic_name, users.name FROM topics, users WHERE topics.id_author=users.id_user;
 
 /*
-  Объединение трех таблиц по условию
+  Внутреннее объединение трех таблиц по условию
 */
 SELECT posts.message, topics.topic_name, users.name
 FROM posts, topics, users
