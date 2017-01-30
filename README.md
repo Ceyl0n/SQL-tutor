@@ -94,3 +94,35 @@ SELECT topic_name FROM topics WHERE id_topic IN
   (SELECT id_topic FROM posts WHERE id_author IN
   (SELECT id_author FROM topics WHERE topic_name='велосипеды'));
 ```
+
+
+### Внутренне объединение
+
+Позволяют получить данные из нескольких таблиц и объединить их в одну. Получаем строки которые имеют связ друг с другом
+
+```sql
+SELECT topics.topic_name, users.name
+FROM topics, users
+WHERE topics.id_author=users.id_user;
+
+SELECT posts.message, topics.topic_name, users.name
+FROM posts, topics, users
+WHERE posts.id_author=users.id_user AND posts.id_topic=topics.id_topic;
+```
+
+
+### Внешнее объединение
+
+Позволяют получить данные из нескольких таблиц и объединить их в одну. Получаем все строки из одной таблицы и имеющиеся связанные  с ними из другой таблицы. Обратить внимание, что условие для объединения указывается через ключевое слово `ON`, в не `WHERE`.
+
+```sql
+SELECT users.name, topics.topic_name
+FROM users LEFT OUTER JOIN topics
+ON users.id_user=topics.id_author;
+```
+
+
+**Ключевые слова для внешнего объединения таблиц:**
+- `LEFT OUTER JOIN` выбираем все строки из таблицы слева
+- `RIGHT OUTER JOIN` выбираем все строки из таблицы справа
+- `FULL OUTER JOIN` полное внешнее объединение
